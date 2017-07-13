@@ -23,10 +23,13 @@ var dog = {
   age: 3,
   vegeterian: true,
   color: ["brown", "white"],
-  speak: "woof!"
+  speak: function(){
+    //return rather than console.log() because it needs a return instead of a console.log()
+    return "woof!";
+    }
 }
 
-console.log("My dog " + dog.name + " is " + dog.age + " year old likes to " + dog.speak);
+console.log("My dog " + dog.name + " is " + dog.age + " year old likes to " + dog.speak());
 
 /*
 An empty object
@@ -41,6 +44,17 @@ An empty object
   Console.log the object.
 */
 
+var kicks = {};
+  kicks.brand = "nb";
+  kicks.color = "red";
+  kicks.size = 7;
+  kicks.buy = function(){
+    return "Hell Yeah!"
+  };
+
+console.log(kicks);
+console.log(kicks.buy);
+console.log(kicks.buy());
 
 /* 
    Declare a variable named `plainBox` and set its value to be an EMPTY object.
@@ -50,6 +64,10 @@ An empty object
             - add a property named `contents` and set it to be an empty array.
 */
 
+var plainBox = {};
+plainBox.color = "pink";
+plainBox.size = 10;
+plainBox.contents = [];
 
 /*
    Declare a variable named `stockCar` and create the following properties (key-value pairs) to the object:
@@ -60,6 +78,16 @@ An empty object
             - add a key named `passengers` and set it to be an empty array.
 */
 
+var stockCar = {
+  model: "Ford",
+  year: 2010,
+  automaticTransmission: false,
+  driver: null,
+  passengers: []
+};
+
+//building & defining key pairs inside of the object, use a colon (:), inside of the { }
+//assigning & modifying require equal signs (=)
 
 /*
    Add new property inside a function
@@ -77,6 +105,19 @@ An empty object
    the value at `name`, and just the value at `age`.
  */
 
+var plainPerson = {};
+
+function buildPerson(person, nameString, age){
+  person.name = nameString;
+  person.age = age;
+  return person;
+}
+
+var completePerson = buildPerson(plainPerson, "bob", 17);
+
+console.log(completePerson);
+console.log(completePerson.name);
+console.log(completePerson.age);
 
 /*
    Display values of objects that are inside an array
@@ -103,6 +144,62 @@ An empty object
             ...
  */
 
+function printProcessedOrders(orders){
+  return 
+}
+
+var arrayOfObjects = [
+  {
+    id: 0,
+    date: "Monday Jan 25 2015 2:01 PM",
+    total: "279.38"
+  },
+  {
+    id: 1,
+    date: "Monday Jan 27 2015 11:31 AM",
+    total: "79.80"
+  },
+  {
+    id: 2,
+    date: "Monday Feb 1 2015 7:56 AM",
+    total: "15.62"
+  },
+  {
+    id: 3,
+    date: "Monday Feb 1 2015 9:43 AM",
+    total: "19.83"
+  },
+  {
+    id: 4,
+    date: "Monday Feb 1 2015 11:08 PM",
+    total: "56.69"
+  },
+  {
+    id: 5,
+    date: "Monday Feb 13 2015 10:22 AM",
+    total: "137.92"
+  },
+  {
+    id: 6,
+    date: "Monday Feb 14 2015 6:54 PM",
+    total: "938.65"
+  },
+  {
+    id: 7,
+    date: "Monday Feb 14 2015 7:17 PM",
+    total: "43.77"
+  },
+  {
+    id: 8,
+    date: "Monday Feb 14 2015 7:18 PM",
+    total: "28.54"
+  },
+  {
+    id: 9,
+    date: "Monday Feb 14 2015 7:18 PM",
+    total: "194.33"
+  }
+];
 
 /*
    Addition with an object
@@ -117,6 +214,20 @@ An empty object
         to inspect your results.
 */
 
+var sumObj = {
+  a: 6,
+  b: 65,
+  result: undefined
+}
+
+function objectAddition(obj){
+  obj.result = obj.a + obj.b;
+  return obj;
+}
+
+var sumObjResult = objectAddition(sumObj);
+
+console.log(sumObjResult);
 
 /*
    Print sum function and add as new key-value
